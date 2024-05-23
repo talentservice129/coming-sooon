@@ -1,24 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import "./index.scss";
+import { TypeAnimation } from "react-type-animation";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="glitch">
+        {new Array(10).fill(0).map((_, index) => (
+          <div className="line" key={index}>
+            Vive la DATA révolution!
+          </div>
+        ))}
+      </div>
+      {/* <div className="glitch glitch-sm">
+        {new Array(5).fill(0).map((_, index) => (
+          <div className="line" key={index}> */}
+      <br />
+      <TypeAnimation
+        sequence={[
+          "Automated clean master data", // Types 'One'
+          3000, // Waits 1s
+          "Automated reporting", // Deletes 'One' and types 'Two'
+          3000, // Waits 2s
+          "Automated data feed",
+          3000,
+        ]}
+        wrapper="div"
+        cursor={true}
+        repeat={Infinity}
+        style={{
+          fontSize: "1.5rem",
+          fontWeight: 300,
+          color: "#fff",
+        }}
+      />
     </div>
+    //     ))}
+    //   </div>
+    // </div>
   );
 }
 
